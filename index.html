@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Event Registration Form</title>
+
+  <!-- Bootstrap CSS -->
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+  <style>
+
+    body{
+      background:#f4f6f9;
+    }
+
+    .form-box{
+      background:white;
+      padding:30px;
+      border-radius:15px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+      <div class="col-md-6">
+
+        <div class="form-box">
+
+          <h2 class="text-center mb-4">
+            Event Registration
+          </h2>
+
+          <!-- Form -->
+
+          <form class="needs-validation"
+                novalidate>
+
+            <!-- Name -->
+
+            <div class="form-floating mb-3">
+
+              <input type="text"
+                     class="form-control"
+                     id="name"
+                     placeholder="Enter Name"
+                     required>
+
+              <label for="name">
+                Full Name
+              </label>
+
+              <div class="invalid-feedback">
+                Please enter your name.
+              </div>
+
+            </div>
+
+            <!-- Email -->
+
+            <div class="form-floating mb-3">
+
+              <input type="email"
+                     class="form-control"
+                     id="email"
+                     placeholder="Enter Email"
+                     required>
+
+              <label for="email">
+                Email Address
+              </label>
+
+              <div class="invalid-feedback">
+                Please enter a valid email.
+              </div>
+
+            </div>
+
+            <!-- Phone -->
+
+            <div class="form-floating mb-3">
+
+              <input type="tel"
+                     class="form-control"
+                     id="phone"
+                     placeholder="Phone Number"
+                     required>
+
+              <label for="phone">
+                Phone Number
+              </label>
+
+              <div class="invalid-feedback">
+                Please enter phone number.
+              </div>
+
+            </div>
+
+            <!-- Event Type -->
+
+            <div class="mb-3">
+
+              <label class="form-label">
+                Select Event
+              </label>
+
+              <select class="form-select"
+                      required>
+
+                <option value="">
+                  Choose Event
+                </option>
+
+                <option>
+                  Coding Competition
+                </option>
+
+                <option>
+                  Robotics Workshop
+                </option>
+
+                <option>
+                  Hackathon
+                </option>
+
+              </select>
+
+              <div class="invalid-feedback">
+                Please select an event.
+              </div>
+
+            </div>
+
+            <!-- Tooltip Input -->
+
+            <div class="mb-3">
+
+              <label class="form-label">
+                College Name
+              </label>
+
+              <input type="text"
+                     class="form-control"
+                     data-bs-toggle="tooltip"
+                     data-bs-placement="right"
+                     title="Enter your college name">
+
+            </div>
+
+            <!-- Checkbox -->
+
+            <div class="form-check mb-3">
+
+              <input class="form-check-input"
+                     type="checkbox"
+                     required>
+
+              <label class="form-check-label">
+
+                I agree to terms and conditions
+
+              </label>
+
+              <div class="invalid-feedback">
+                Please accept terms.
+              </div>
+
+            </div>
+
+            <!-- Submit Button -->
+
+            <button class="btn btn-primary w-100"
+                    type="submit">
+
+              Register
+
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+  <!-- Validation Script -->
+
+  <script>
+
+    const forms =
+    document.querySelectorAll(".needs-validation");
+
+    forms.forEach(form => {
+
+      form.addEventListener("submit",
+      function(event){
+
+        if(!form.checkValidity()){
+
+          event.preventDefault();
+          event.stopPropagation();
+
+        }
+
+        form.classList.add("was-validated");
+
+      });
+
+    });
+
+    /* Tooltip */
+
+    const tooltipTriggerList =
+    document.querySelectorAll('[data-bs-toggle="tooltip"]');
+
+    tooltipTriggerList.forEach(tooltip => {
+
+      new bootstrap.Tooltip(tooltip);
+
+    });
+
+  </script>
+
+</body>
+
+</html>
